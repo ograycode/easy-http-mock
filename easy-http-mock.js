@@ -46,11 +46,15 @@ angular.module('easyHttpMock', []).
     $httpProvider.interceptors.push(function($q){
       return {
         response: function(data) {
-          easyHttpMock.intercept(data, false);
+          if (easyHttpMock.isEnabled) {
+            easyHttpMock.intercept(data, false);
+          }
           return data || $q.when(data);
         },
         responseError: function(data) {
-          easyHttpMock.intercept(data, true);
+          if (easyHttpMock.isEnabled) {
+            easyHttpMock.intercept(data, true);
+          }
           return $q.reject(data);
         }
       };
