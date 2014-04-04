@@ -1,5 +1,6 @@
 var easyHttpMock = {
   isEnabled: false,
+  logRaw: false,
   data: { 
     success: {},
     error: {}
@@ -9,9 +10,11 @@ var easyHttpMock = {
       data: response.data,
       url: response.config.url,
       method: response.config.method,
-      raw: response,
       status: response.status
     };
+    if (easyHttpMock.logRaw) {
+      val.raw = response;
+    }
     var key = response.config.url;
     easyHttpMock.log(key, val, isError);
   },
