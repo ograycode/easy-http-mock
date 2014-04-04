@@ -29,7 +29,7 @@ var easyHttpMock = {
     var create = function (d, keys) {
       for(var i = 0; i < keys.length; i++) {
         var method = d[keys[i]].method;
-        var url = d[keys[i]].url;
+        var url = d[keys[i]].urlOverride || d[keys[i]].url;
         var response = d[keys[i]].data;
         var status = d[keys[i]].status;
         $httpBackend.when(method, url).respond(status, response);
