@@ -1,0 +1,26 @@
+{
+  "name": "easy-http-mock",
+  "main": "easy-http-mock.js",
+  "version": "0.0.1",
+  "homepage": "https://github.com/ograycode/easy-http-mock",
+  "authors": [
+    "Gojira <jason@theograys.com>"
+  ],
+  "description": "Mocking AngularJs $http calls has never been easier.",
+  "keywords": [
+    "angular",
+    "angularjs",
+    "httpbackend",
+    "testing",
+    "$http",
+    "$httpbackend"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
